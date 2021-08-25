@@ -18,12 +18,20 @@ namespace VogCodeChallenge.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddSingleton<IEmployeeService, EmployeeService>();
+            services.AddControllers();
+            services.AddSwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(s=> 
+            {
+                s.SwaggerEndpoint("swagger/v1/swagger.json", "Vog API V1");
+                s.RoutePrefix = string.Empty;
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
