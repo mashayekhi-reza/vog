@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\VogCodeChallenge.ApplicationServices\VogCodeChallenge.ApplicationServices.csproj" />
+    <ProjectReference Include="..\VogCodeChallenge.Domain\VogCodeChallenge.Domain.csproj" />
   </ItemGroup>
 
 
