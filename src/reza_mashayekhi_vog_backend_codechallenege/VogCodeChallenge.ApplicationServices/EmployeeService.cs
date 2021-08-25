@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VogCodeChallenge.Domain;
 
@@ -30,8 +31,11 @@ namespace VogCodeChallenge.ApplicationServices
         public IList<Employee> ListAll()
         {
             return GetAll().ToList();
-
         }
 
+        public IEnumerable<Employee> GetByDepartment(Guid departmentId)
+        {
+            return _company.Departments.Single(d => d.Id == departmentId).Employees;
+        }
     }
 }

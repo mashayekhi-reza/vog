@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\VogCodeChallenge.ApplicationServices\VogCodeChallenge.ApplicationServices.csproj" />
+    <ProjectReference Include="..\VogCodeChallenge.Domain\VogCodeChallenge.Domain.csproj" />
   </ItemGroup>
 
 
