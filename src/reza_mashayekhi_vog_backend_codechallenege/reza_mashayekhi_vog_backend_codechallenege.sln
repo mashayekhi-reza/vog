@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API", "VogCodeChallenge.API\VogCodeChallenge.API.csproj", "{8C83F043-AE2A-4631-9385-BD54443EAD2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Domain", "VogCodeChallenge.Domain\VogCodeChallenge.Domain.csproj", "{502D24DD-F3BA-4EDF-A334-385B926F8F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Domain", "VogCodeChallenge.Domain\VogCodeChallenge.Domain.csproj", "{502D24DD-F3BA-4EDF-A334-385B926F8F23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Domain.Tests", "VogCodeChallenge.Domain.Tests\VogCodeChallenge.Domain.Tests.csproj", "{3D63DF2E-3B63-4B01-BB30-EE6CE77E980C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Shared", "VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj", "{EA9FB148-A23B-440D-B19D-6218ED4F01F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{502D24DD-F3BA-4EDF-A334-385B926F8F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{502D24DD-F3BA-4EDF-A334-385B926F8F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{502D24DD-F3BA-4EDF-A334-385B926F8F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D63DF2E-3B63-4B01-BB30-EE6CE77E980C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D63DF2E-3B63-4B01-BB30-EE6CE77E980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D63DF2E-3B63-4B01-BB30-EE6CE77E980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D63DF2E-3B63-4B01-BB30-EE6CE77E980C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA9FB148-A23B-440D-B19D-6218ED4F01F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA9FB148-A23B-440D-B19D-6218ED4F01F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA9FB148-A23B-440D-B19D-6218ED4F01F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA9FB148-A23B-440D-B19D-6218ED4F01F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
