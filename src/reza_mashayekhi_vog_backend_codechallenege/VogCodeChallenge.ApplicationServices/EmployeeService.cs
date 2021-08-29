@@ -7,35 +7,40 @@ namespace VogCodeChallenge.ApplicationServices
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly Company _company;
+        private readonly List<Employee> _employees;
+
 
         public EmployeeService()
         {
-            _company = new Company("Vog");
-            _company.AddDepartment("IT", "Here!");
-            var it = _company.Departments.Single();
-            it.AddEmployee("John", "Smith", "IT man1", "address IT 1");
-            it.AddEmployee("Peter", "White", "IT man2", "address IT 2");
+            var company = new Company(Guid.NewGuid(), "Vog");
+            var departments = new Department[]
+            {
+                new Department(new Guid("45064EE1-65D2-464E-92EE-1F3D70A8D0BC"), company, "IT", "Here"),
+                new Department(new Guid("1DD4DE62-1D98-4FA5-9141-64894B41E910"), company, "Business", "There")
+            };
+            _employees = new List<Employee>()
+            {
 
-            _company.AddDepartment("Business", "There!");
-            var business = _company.Departments.Last();
-            business.AddEmployee("John", "Doe", "Business Man1", "address business 1");
-            business.AddEmployee("Jean", "Doe", "Business Woman2", "address business 2");
+                new Employee(Guid.NewGuid(), departments[0], "John", "Smith", "IT man1", "address IT 1"),
+                new Employee(Guid.NewGuid(), departments[0], "Peter", "White", "IT man2", "address IT 2"),
+                new Employee(Guid.NewGuid(), departments[1], "John", "Doe", "Business Man1", "address business 1"),
+                new Employee(Guid.NewGuid(), departments[1], "Jean", "Doe", "Business Woman2", "address business 2")
+            };
         }
 
         public IEnumerable<Employee> GetAll()
         {
-            return _company.Departments.SelectMany(d => d.Employees);
+            return _employees;
         }
 
         public IList<Employee> ListAll()
         {
-            return GetAll().ToList();
+            return _employees;
         }
 
         public IEnumerable<Employee> GetByDepartment(Guid departmentId)
         {
-            return _company.Departments.Single(d => d.Id == departmentId).Employees;
+            return _employees.Where(e => e.Department.Id == departmentId);
         }
     }
 }

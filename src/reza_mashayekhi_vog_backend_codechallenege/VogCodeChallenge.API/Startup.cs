@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VogCodeChallenge.API.Helpers;
 using VogCodeChallenge.ApplicationServices;
 
 namespace VogCodeChallenge.API
@@ -19,6 +20,8 @@ namespace VogCodeChallenge.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IEmployeeService, EmployeeService>();
+            services.AddSingleton<IEmployeeMapper, EmployeeMapper>();
+            
             services.AddControllers();
             services.AddSwaggerGen();
         }

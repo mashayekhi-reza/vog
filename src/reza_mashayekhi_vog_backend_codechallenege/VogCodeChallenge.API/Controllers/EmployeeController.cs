@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using VogCodeChallenge.API.DTOs;
+using VogCodeChallenge.API.Helpers;
 using VogCodeChallenge.ApplicationServices;
-using VogCodeChallenge.Domain;
 
 namespace VogCodeChallenge.API.Controllers
 {
@@ -11,21 +12,27 @@ namespace VogCodeChallenge.API.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
-        public EmployeeController(IEmployeeService employeeService)
+        private readonly IEmployeeMapper _mapper;
+        
+        public EmployeeController(IEmployeeService employeeService,
+            IEmployeeMapper mapper)
         {
             _employeeService = employeeService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<EmployeeDTO> Get()
         {
-            return _employeeService.GetAll();
+            var employees = _employeeService.GetAll();
+            return _mapper.MapToDTO(employees);
         }
 
         [HttpGet("department/{departmentId}")]
-        public IEnumerable<Employee> Get(Guid departmentId)
+        public IEnumerable<EmployeeDTO> Get(Guid departmentId)
         {
-            return _employeeService.GetByDepartment(departmentId);
+            var employees = _employeeService.GetByDepartment(departmentId);
+            return _mapper.MapToDTO(employees);
         }        
     }
 }
