@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VogCodeChallenge.API.Helpers;
 using VogCodeChallenge.ApplicationServices;
+using VogCodeChallenge.Infrastructure;
 
 namespace VogCodeChallenge.API
 {
@@ -21,7 +22,9 @@ namespace VogCodeChallenge.API
         {
             services.AddSingleton<IEmployeeService, EmployeeService>();
             services.AddSingleton<IEmployeeMapper, EmployeeMapper>();
-            
+
+            services.RegisterInfrastractureServices(Configuration);
+
             services.AddControllers();
             services.AddSwaggerGen();
         }
