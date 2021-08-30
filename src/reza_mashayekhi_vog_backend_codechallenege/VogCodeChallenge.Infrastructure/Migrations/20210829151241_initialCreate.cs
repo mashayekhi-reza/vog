@@ -70,6 +70,33 @@ namespace VogCodeChallenge.Infrastructure.Migrations
                 name: "IX_Employees_DepartmentId",
                 table: "Employees",
                 column: "DepartmentId");
+
+            migrationBuilder.InsertData(table: "Companies", columns: new[] { "Id", "Name" },
+                values: new object[] { new Guid("1A46D0D0-77B9-4BCF-89EB-0196017D1676"), "Vog" });
+
+            migrationBuilder.InsertData(table: "Departments", columns: new[] { "Id", "Name", "Address", "CompanyId" },
+                values: new object[] { new Guid("439FAD1B-0872-4A9F-88AB-479879168740"), "IT", "Here", 
+                    new Guid("1A46D0D0-77B9-4BCF-89EB-0196017D1676") });
+
+            migrationBuilder.InsertData(table: "Departments", columns: new[] { "Id", "Name", "Address", "CompanyId" },
+                values: new object[] { new Guid("A8B39757-9C80-4E47-A458-A83BF3D32BD1"), "Sales", "There",
+                    new Guid("1A46D0D0-77B9-4BCF-89EB-0196017D1676") });
+
+            migrationBuilder.InsertData(table: "Employees", columns: new[] { "Id", "FirstName", "LastName", "Address", "JobTitle", "DepartmentId" },
+                values: new object[] { new Guid("50469503-1314-480E-933A-DAD399CC5024"), "John", "Doe", "Street 1", "Sales Person 1",
+                    new Guid("A8B39757-9C80-4E47-A458-A83BF3D32BD1") });
+
+            migrationBuilder.InsertData(table: "Employees", columns: new[] { "Id", "FirstName", "LastName", "Address", "JobTitle", "DepartmentId" },
+                values: new object[] { new Guid("1376C076-C3C6-4CFE-BD26-5AFBC46E8ABF"), "Jean", "Doe", "Street 2", "Sales Person 2",
+                    new Guid("A8B39757-9C80-4E47-A458-A83BF3D32BD1") });
+
+            migrationBuilder.InsertData(table: "Employees", columns: new[] { "Id", "FirstName", "LastName", "Address", "JobTitle", "DepartmentId" },
+                values: new object[] { new Guid("7FFF1471-6D6E-4FE7-9496-DA9C88D56926"), "John", "Smith", "Street 3", "IT Developer 1",
+                    new Guid("439FAD1B-0872-4A9F-88AB-479879168740") });
+
+            migrationBuilder.InsertData(table: "Employees", columns: new[] { "Id", "FirstName", "LastName", "Address", "JobTitle", "DepartmentId" },
+                values: new object[] { new Guid("158DCBC5-E5DC-4897-864B-65747552238A"), "Peter", "White", "Street 4", "IT Tester 1",
+                    new Guid("439FAD1B-0872-4A9F-88AB-479879168740") });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
