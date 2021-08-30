@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VogCodeChallenge.Domain.Repositories;
+using VogCodeChallenge.Infrastructure.Repositories;
 
 namespace VogCodeChallenge.Infrastructure
 {
@@ -14,6 +16,8 @@ namespace VogCodeChallenge.Infrastructure
             {
                 options.UseSqlite(connectionString);
             });
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
             return services;
         }

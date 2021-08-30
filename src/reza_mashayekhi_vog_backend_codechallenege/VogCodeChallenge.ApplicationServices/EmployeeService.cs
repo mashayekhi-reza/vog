@@ -1,46 +1,35 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using VogCodeChallenge.Domain;
+using VogCodeChallenge.Domain.Repositories;
 
 namespace VogCodeChallenge.ApplicationServices
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly List<Employee> _employees;
+        private readonly IEmployeeRepository _repository;
 
-
-        public EmployeeService()
+        public EmployeeService(IEmployeeRepository repository)
         {
-            var company = new Company(Guid.NewGuid(), "Vog");
-            var departments = new Department[]
-            {
-                new Department(new Guid("45064EE1-65D2-464E-92EE-1F3D70A8D0BC"), company, "IT", "Here"),
-                new Department(new Guid("1DD4DE62-1D98-4FA5-9141-64894B41E910"), company, "Business", "There")
-            };
-            _employees = new List<Employee>()
-            {
-
-                new Employee(Guid.NewGuid(), departments[0], "John", "Smith", "IT man1", "address IT 1"),
-                new Employee(Guid.NewGuid(), departments[0], "Peter", "White", "IT man2", "address IT 2"),
-                new Employee(Guid.NewGuid(), departments[1], "John", "Doe", "Business Man1", "address business 1"),
-                new Employee(Guid.NewGuid(), departments[1], "Jean", "Doe", "Business Woman2", "address business 2")
-            };
+            _repository = repository;
         }
 
-        public IEnumerable<Employee> GetAll()
+        public async Task<IEnumerable<Employee>> GetAll()
         {
-            return _employees;
+            return await _repository.GetAll().ToListAsync();
         }
 
-        public IList<Employee> ListAll()
+        public async Task<IEnumerable<Employee>> GetByDepartment(Guid departmentId)
         {
-            return _employees;
+            return await _repository.GetAll().Where(e => e.Department.Id == departmentId).ToListAsync();
         }
 
-        public IEnumerable<Employee> GetByDepartment(Guid departmentId)
+        public async Task<IList<Employee>> ListAll()
         {
-            return _employees.Where(e => e.Department.Id == departmentId);
+            return await _repository.GetAll().ToListAsync();
         }
     }
 }

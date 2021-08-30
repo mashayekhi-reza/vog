@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using VogCodeChallenge.API.DTOs;
 using VogCodeChallenge.API.Helpers;
 using VogCodeChallenge.ApplicationServices;
@@ -22,16 +23,16 @@ namespace VogCodeChallenge.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EmployeeDTO> Get()
+        public async Task<IEnumerable<EmployeeDTO>> Get()
         {
-            var employees = _employeeService.GetAll();
+            var employees = await _employeeService.GetAll();
             return _mapper.MapToDTO(employees);
         }
 
         [HttpGet("department/{departmentId}")]
-        public IEnumerable<EmployeeDTO> Get(Guid departmentId)
+        public async Task<IEnumerable<EmployeeDTO>> Get(Guid departmentId)
         {
-            var employees = _employeeService.GetByDepartment(departmentId);
+            var employees = await _employeeService.GetByDepartment(departmentId);
             return _mapper.MapToDTO(employees);
         }        
     }
