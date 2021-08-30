@@ -5,6 +5,10 @@ namespace VogCodeChallenge.Domain
 {
     public class Company : Entity
     {
+        public Company()
+        {
+        }
+
         public Company(Guid id, string name)
         {
             

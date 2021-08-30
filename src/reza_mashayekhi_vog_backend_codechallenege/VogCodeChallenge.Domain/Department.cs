@@ -6,6 +6,11 @@ namespace VogCodeChallenge.Domain
 {
     public class Department : Entity
     {
+        public Department()
+        {
+
+        }
+
         public Department(Guid id, Company company, string name, string address)
         {
             EnsureArgumentsAreValid(id, company, name, address);            
