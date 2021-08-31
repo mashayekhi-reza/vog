@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp", "..\VogCodeChallenge.ConsoleApp\VogCodeChallenge.ConsoleApp.csproj", "{CC8A5232-FCB7-4398-8447-8B6C1BC093F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.ConsoleApp.Tests", "..\VogCodeChallenge.ConsoleApp.Tests\VogCodeChallenge.ConsoleApp.Tests.csproj", "{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp.Tests", "..\VogCodeChallenge.ConsoleApp.Tests\VogCodeChallenge.ConsoleApp.Tests.csproj", "{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.AWSLambda", "..\VogCodeChallenge.AWSLambda\VogCodeChallenge.AWSLambda.csproj", "{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
