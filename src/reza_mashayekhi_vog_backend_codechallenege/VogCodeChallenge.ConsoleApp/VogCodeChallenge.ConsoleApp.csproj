@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\reza_mashayekhi_vog_backend_codechallenege\VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj" />
+    <ProjectReference Include="..\VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj" />
   </ItemGroup>
 
 </Project>

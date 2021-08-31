@@ -17,11 +17,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Infrastructure", "VogCodeChallenge.Infrastructure\VogCodeChallenge.Infrastructure.csproj", "{2D88C5AD-BB74-40D1-A9EF-1F83FFD68603}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp", "..\VogCodeChallenge.ConsoleApp\VogCodeChallenge.ConsoleApp.csproj", "{CC8A5232-FCB7-4398-8447-8B6C1BC093F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp", "VogCodeChallenge.ConsoleApp\VogCodeChallenge.ConsoleApp.csproj", "{CC8A5232-FCB7-4398-8447-8B6C1BC093F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp.Tests", "..\VogCodeChallenge.ConsoleApp.Tests\VogCodeChallenge.ConsoleApp.Tests.csproj", "{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp.Tests", "VogCodeChallenge.ConsoleApp.Tests\VogCodeChallenge.ConsoleApp.Tests.csproj", "{BEF2F597-F65C-47BD-9BE5-A0C453BAF406}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.AWSLambda", "..\VogCodeChallenge.AWSLambda\VogCodeChallenge.AWSLambda.csproj", "{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.AWSLambda", "VogCodeChallenge.AWSLambda\VogCodeChallenge.AWSLambda.csproj", "{7FD186F5-1D18-4EAA-A91C-48E81A3F55E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
